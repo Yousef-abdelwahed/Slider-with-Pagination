@@ -1,0 +1,96 @@
+
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+};
+
+body{
+    font-family: Tahoma, Arial;
+};
+
+.slide-container{
+    position: relative;
+    margin: 10px auto;
+    max-width: 100%;
+    height: 445px;
+    overflow: hidden;
+    .slideNumber{
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        background-color: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 12px;
+        z-index: 2;
+        border-radius: 6px;
+    }
+    img{
+        position: absolute;
+        object-fit: scale-down;
+        width: 100%;
+        height: 100%;
+        margin:  0 ;
+        opacity: 0;
+        transition: opacity 1s;
+        z-index: 1;
+    }
+    img.active{
+        opacity: 1;
+    }
+}
+.slider-controls{
+    max-width: 90%;
+    margin: auto;
+    overflow: hidden;
+    .pervious{
+        float: left;
+    }
+    .next{
+        float: right;
+    }
+    .pervious , .next{
+        background-color: #009687;
+        color: #fff;
+        font-size: 16px;
+        width: 20%;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5%;
+        padding: 5px;
+        user-select: none;
+    }
+    .pervious.disabled,.next.disabled{
+        cursor: no-drop;
+        background-color:#00968770 ;
+    }
+    .indicators{
+        width: 60%;
+        float: left;
+        #paginationList{
+            margin: 0;
+            list-style: none;
+            text-align: center;
+        }
+        li{
+            display: inline-block;
+            background-color: rgb(224, 211, 211);
+            color: #333;
+            height: 28px;
+            width: 28px;
+            line-height: 28px;
+            margin: 0 2px;
+            border-radius: 5%;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        #paginationList li.active{
+            background-color: #0de2ce;
+            color: #fff;
+        }
+
+    }
+}
